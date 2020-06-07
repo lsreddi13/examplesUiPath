@@ -1,0 +1,58 @@
+{
+  "name": "Examples",
+  "description": "Test Automation Project",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.8.5]",
+    "UiPath.System.Activities": "[20.4.0]",
+    "UiPath.Testing.Activities": "[1.0.0]",
+    "UiPath.UIAutomation.Activities": "[20.4.1]",
+    "UiPath.Word.Activities": "[1.4.2]"
+  },
+  "webServices": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.4.1.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Tests",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cccaf2df-e888-4426-9cfd-b96be52f2a61",
+        "fileName": "TestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c614d005-96e3-40c6-9f2b-021aa7460b2d",
+        "fileName": "FilterDatainExcel.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "637c3906-e7a6-4db8-afaa-d1b1d360b130",
+        "fileName": "ReadWriteExcelDemo.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cc8e9e94-55ed-4ec0-9ddd-8e6d67ea72e3",
+        "fileName": "ConvertTimesDemo.xaml"
+      }
+    ]
+  },
+  "expressionLanguage": "VisualBasic"
+}
