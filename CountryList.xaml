@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CountryList" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="873.333333333333,800.666666666667" sap2010:WorkflowViewState.IdRef="CountryList_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CountryList" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="624,800.666666666667" sap2010:WorkflowViewState.IdRef="CountryList_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
@@ -72,19 +72,19 @@
           <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap:VirtualizedContainerService.HintSize="572.666666666667,1123.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence sap:VirtualizedContainerService.HintSize="572.666666666667,1320.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="530.666666666667,1031.33333333333" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.mediacollege.com/internet/samples/html/country-list.html">
+        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="This case will get the Country name from web and write in a Xlsx file." BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="530.666666666667,1228.66666666667" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.mediacollege.com/internet/samples/html/country-list.html">
           <ui:OpenBrowser.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496.666666666667,928.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496.666666666667,1095.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Countries" />
                 </Sequence.Variables>
@@ -93,7 +93,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:FindChildren Children="[Countries]" DisplayName="Find Children 'SELECT'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="454.666666666667,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                <ui:FindChildren sap2010:Annotation.AnnotationText="using Find children activity to get the text from dropdown list values." Children="[Countries]" DisplayName="Find Children 'SELECT'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="454.666666666667,151.333333333333" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
                   <ui:FindChildren.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fb4b7026-3f36-4af1-a3ad-ea40425e6c30" InformativeScreenshot="adb201079732b5cf941c5718fc6b2feb" Selector="&lt;webctrl tag='SELECT' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -104,20 +104,25 @@
                       </ui:Target.WaitForReady>
                     </ui:Target>
                   </ui:FindChildren.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:FindChildren>
-                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454.666666666667,690.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Countries]">
+                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Using ForEach activity to get all the countries one by one." DisplayName="For Each" sap:VirtualizedContainerService.HintSize="454.666666666667,812" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Countries]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="ui:UiElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence sap:VirtualizedContainerService.HintSize="418,555.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence sap:VirtualizedContainerService.HintSize="418,646" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,463.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,554" sap2010:WorkflowViewState.IdRef="Sequence_1">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="CountryName" />
                           </Sequence.Variables>
@@ -126,24 +131,51 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign sap2010:Annotation.AnnotationText="Using Assign Activity to get Country name." sap:VirtualizedContainerService.HintSize="334,107.333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[CountryName]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">[item.Get("Text").ToString]</InArgument>
                             </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </Assign>
-                          <ui:WriteCell Cell="[&quot;A&quot;+Index.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="[CountryName]" WorkbookPath="Countries.xlsx" />
-                          <ui:WriteCell Cell="[&quot;B&quot;+index.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="Success" WorkbookPath="Countries.xlsx" />
+                          <ui:WriteCell sap2010:Annotation.AnnotationText="Using Write Cell activity to write the country name in xlsx file." Cell="[&quot;A&quot;+Index.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="[CountryName]" WorkbookPath="Countries.xlsx">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
+                          <ui:WriteCell sap2010:Annotation.AnnotationText="Using Write cell activity to write success after writing the country name." Cell="[&quot;B&quot;+index.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="Success" WorkbookPath="Countries.xlsx">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:WriteCell>
                         </Sequence>
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
               </Sequence>
             </ActivityAction>
           </ui:OpenBrowser.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:OpenBrowser>
       </Sequence>
     </FlowStep>
